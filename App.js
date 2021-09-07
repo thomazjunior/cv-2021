@@ -11,7 +11,7 @@ export default () => {
       <MainStack />
       <StatusBar style="auto"/>
     </NavigationContainer>
-    
+  
   );
 }
 
