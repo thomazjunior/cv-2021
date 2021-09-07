@@ -20,7 +20,7 @@ export default () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
