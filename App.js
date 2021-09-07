@@ -10,8 +10,9 @@ export default () => {
     <NavigationContainer>
       <MainStack />
       <StatusBar style="auto"/>
+      <StatusBar style="auto"/>
     </NavigationContainer>
-  
+   
   );
 }
 
