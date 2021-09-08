@@ -1,28 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
+import UserContextProvider from './src/context/UserContext';
 import MainStack from './src/MainStack';
 import { NavigationContainer } from '@react-navigation/native';
 
 export default () => {
   return (
-    <NavigationContainer>
+    <UserContextProvider>
+      <NavigationContainer>
       <MainStack />
-      <StatusBar style="auto"/>
-      <StatusBar style="auto"/>
-    </NavigationContainer>
+      </NavigationContainer>
+    </UserContextProvider>
    
   );
 }
-
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-

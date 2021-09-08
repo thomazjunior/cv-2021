@@ -4,7 +4,7 @@ import { Container } from './styles';
 export default () => {
     return (
         <Container>
-            <Text>SignIn</Text>
+            <Text>SignUp</Text>
         </Container>
     );
 }
