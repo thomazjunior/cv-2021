@@ -16,12 +16,12 @@ export default () => {
             if (token){
               let res = await Api.checkToken(token);
               if (res.token){
-                await AsyncStorage.setItem('token', json.token);
+                await AsyncStorage.setItem('token', res.token);
 
                 userDispatch({
                     type: 'setAvatar',
                     payload:{
-                       avatar: json.data.avatar 
+                       avatar: res.data.avatar 
                     }
                 });
 
