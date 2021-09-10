@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Container,
          Scroller,
@@ -16,7 +16,24 @@ import MyLocationIcon from '../../../assets/my_location.svg';
 
 export default () => {
 
+
+
     const navigation = useNavigation();
+
+    const [locationText, setLocationText] = useState('');
+    const [ coords, setCoords ] = useState(null);
+
+    const [regiao, setRegiao] = useState({
+        latitude: -23.4422149,
+        longitude: -46.9235461,
+        latitudeDelta: 0.014, 
+        longitudeDelta: 0.014
+    });
+
+    const goTo = (screenName) => {
+        navigation.navigate(screenName);
+    }
+
 
     return (
         <Container>
@@ -33,8 +50,10 @@ export default () => {
                     <LocationInput
                         placeholder="Onde você está?"
                         placeholderTextColor="#FFFFFF"
+                        value={locationText}
+                        onChangeText={t=>setLocationText(t)}
                     />
-                    <LocationFinder>
+                    <LocationFinder onPress={()=>goTo('Mapa')}>
                         <MyLocationIcon width="24" height="24"  fill="#FFFFFF"/>
                     </LocationFinder>
                 </LocationArea>
@@ -43,4 +62,5 @@ export default () => {
             </Scroller>
         </Container>
     )
+
 }
