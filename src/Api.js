@@ -1,5 +1,7 @@
 const BASE_API = 'https://api.b7web.com.br/devbarber/api';
 
+import { AsyncStorage } from 'react-native';
+
 export default {
     checkToken: async (token) => {
         const req = await fetch (`${BASE_API}/auth/refresh`, {
@@ -41,5 +43,13 @@ export default {
         const json = await req.json();
         return json;
 
+    },
+
+    getFuncs: async () => {
+        const token = await AsyncStorage.getItem('token');
+
+        const req = await fetch (`${BASE_API}/barbers?token=${token}`);
+        const json = await req.json();
+        return json;
     }
 };

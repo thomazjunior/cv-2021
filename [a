@@ -1,0 +1,77 @@
+[33mcommit 93a423e9db50acb2d658ac642ad87c678ef63c59[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Fri Sep 10 14:56:57 2021 -0300
+
+    View Home page sucessfully implemented
+
+[33mcommit 1818f830d3a292392350487b58520855c4a7d246[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Thu Sep 9 19:54:47 2021 -0300
+
+    Initializing home view page implementation.
+
+[33mcommit b3a37da49a3c01510544e376b4c18d7599701347[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Thu Sep 9 16:06:22 2021 -0300
+
+    Style of the tab bar ok
+
+[33mcommit 914e79d3d507f0b72c6a4eb4e5f4e2418ff1a0dc[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Thu Sep 9 14:18:53 2021 -0300
+
+    Implementation of Navegation views
+
+[33mcommit 09e089204cbb6e76f80982d3f744638b76e3d9bd[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Thu Sep 9 13:04:06 2021 -0300
+
+    Views ok: login and register. Starting implementation of the others.
+
+[33mcommit 3351e33f760e89ca50b4b4edbf7ec3989ea04c88[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Wed Sep 8 14:42:58 2021 -0300
+
+    Checkpoint até a tela de Preload
+
+[33mcommit 6172ad0d2ef2ee744829ca9bafd77346a1457361[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Tue Sep 7 20:49:39 2021 -0300
+
+    Ambiente React Native configurado
+
+[33mcommit 393010be6cbe7052af189226aa3a43f444b91cb4[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Tue Sep 7 20:44:04 2021 -0300
+
+    Commit sem erro
+
+[33mcommit ceff4a688aaeae10a1421538f941b57407622c46[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Tue Sep 7 20:34:35 2021 -0300
+
+    Ambiente React Native configurado
+
+[33mcommit a674d14da5acb88401ca90bf3f4121834e238676[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Tue Sep 7 20:24:12 2021 -0300
+
+    Atualizando
+
+[33mcommit 322d88e098d1418b4af936391c6fb006650e4541[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Tue Sep 7 20:16:48 2021 -0300
+
+    Ambiente React Native configurado.
+
+[33mcommit f0395d91585593c8eb724a6a92c167b49979ceb2[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Tue Sep 7 20:10:33 2021 -0300
+
+    Ambiente React Native configurado.
+
+[33mcommit 3389183412d6e1ce03009634da2086cd41ee6e9f[m
+Author: Paulo Thomaz Junior <p.thomaz.junior@gmail.com>
+Date:   Tue Sep 7 15:15:48 2021 -0300
+
+    Created a new Expo app

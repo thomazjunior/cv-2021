@@ -23,12 +23,7 @@ export default () => {
     const [locationText, setLocationText] = useState('');
     const [ coords, setCoords ] = useState(null);
 
-    const [regiao, setRegiao] = useState({
-        latitude: -23.4422149,
-        longitude: -46.9235461,
-        latitudeDelta: 0.014, 
-        longitudeDelta: 0.014
-    });
+ 
 
     const goTo = (screenName) => {
         navigation.navigate(screenName);
