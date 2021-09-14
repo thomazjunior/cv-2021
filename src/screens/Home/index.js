@@ -47,7 +47,6 @@ export default () => {
         setLoading(true);
         setList([]);
         let res = await Api.getFuncs();
-       alert(res);
         if (res.error == ''){
             setList(res.data);
         } else {
