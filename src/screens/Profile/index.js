@@ -1,44 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { Container, ListArea, Scroller } from './styles';
-import { SectionList, Text } from 'react-native';
-import Api from '../../Api';
-import StudioItem from '../../components/StudioItem';
+import React from 'react';
+import { Text , Button} from 'react-native';
+import { Container } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
+import Api from '../../Api'
 
 export default () => {
+    const navigation = useNavigation();
+    const handleLogoutClick = async () => {
+        await Api.logout();
+        navigation.reset({
+            routes: [{name:'SignIn'}]
+        });
 
-    const [loading, setLoading] = useState(false);
-    const [list, setList] = useState([]);
-    
-    const getFuncs = async () => {
-        setLoading(true);
-        setList([]);
-        let res = await Api.getFuncs();
-       alert(res);
-        if (res.error == ''){
-            setList(res.data);
-        } else {
-            alert ("Erro: " + res.error);
-        }
-        
-        setLoading(false);
     }
 
-    useEffect(() =>{
-        getFuncs();
-    }, []);
-    
     return (
         <Container>
-            <Scroller>
-                <ListArea>
-                    {list.map((item, k)=>(
-                        <StudioItem key={k} data={item} />
-                    ))}
-                </ListArea>
-            </Scroller>
+            <Text>Employer</Text>
+            <Button title="Sair" onPress={handleLogoutClick} />
         </Container>
-    )
-
-
+    );
 }
