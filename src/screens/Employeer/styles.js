@@ -143,6 +143,8 @@ export const TestimonialItem = styled.View`
     border-radius: 10px;
     height: 110px;
     justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
 `;
 export const TestimonialInfo = styled.View`
     flex-direction: row;

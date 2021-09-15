@@ -34,12 +34,14 @@ import { Container,
 import { useNavigation, useRoute } from '@react-navigation/native';
 import BackIcon from '../../../assets/back.svg';
 
+import FavoriteFullIcon from '../../../assets/favorite_full.svg'
 import FavoriteIcon from '../../../assets/favorite.svg'
 import NavNextIcon from '../../../assets/nav_next.svg';
 import NavPrevIcon from '../../../assets/nav_prev.svg';
 
 import Swiper from 'react-native-swiper';
 import Stars from '../../components/Stars';
+import StudioModal from '../../components/StudioModal'
 
 
 import Api from '../../Api';
@@ -56,6 +58,9 @@ export default () => {
         stars: route.params.stars
 });
     const [loading, setLoading] = useState(false);
+    const [favorited, setFavorited] = useState(false);
+    const [selectedService, setSelectedService] = useState(null);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(()=>{
         const getEmployeerInfo = async () => {
@@ -63,6 +68,7 @@ export default () => {
             let json = await Api.getFunc(userInfo.id);
             if (json.error == ''){
                 setUserInfo(json.data);
+                setFavorited(json.data.favorited);
             } else {
                 alert("Erro: "+json.error);
             }
@@ -75,6 +81,15 @@ export default () => {
         navigation.goBack();
     }
 
+    const handleFavClick = () => {
+        setFavorited ( !favorited );
+        Api.setFavorite( userInfo.id );
+    }
+
+    const handleServiceChoose = (key) => {
+        setSelectedService(key);
+        setShowModal(true);
+    }
 
     return (
         <Container>
@@ -104,8 +119,12 @@ export default () => {
                             <UserInfoName>{userInfo.name}</UserInfoName>
                             <Stars stars={userInfo.stars} showNumber={true} />
                         </UserInfo>
-                        <UserFavButton>
-                            <FavoriteIcon width="24" height="24" fill="#FF0000" />
+                        <UserFavButton onPress={handleFavClick}>
+                            {favorited ?
+                                <FavoriteFullIcon width="24" height="24" fill="#FF0000" />   
+                                :
+                                <FavoriteIcon width="24" height="24" fill="#FF0000" />
+                            }
                         </UserFavButton>
                  </UserInfoArea>
                     {loading && 
@@ -122,7 +141,7 @@ export default () => {
                                     <ServiceName>{item.name}</ServiceName>
                                     <ServicePrice>R$ {item.price}</ServicePrice>
                                 </ServiceInfo>
-                                <ServiceChooseButton>
+                                <ServiceChooseButton onPress={()=>handleServiceChoose(key)}>
                                     <ServiceChooseBtnText>Agendar</ServiceChooseBtnText>
                                 </ServiceChooseButton>
                             </ServiceItem>
@@ -161,6 +180,13 @@ export default () => {
             <BackButton onPress={handleBackButton}>
                 <BackIcon width="44" height="44" fil="#FFFFFF" />
             </BackButton>           
+                    
+             <StudioModal 
+                show={showModal}
+                setShow={setShowModal}
+                user={userInfo}
+                service={selectedService}
+             />       
         </Container>
     );
 }
